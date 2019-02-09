@@ -1,0 +1,144 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>HybridFrameworkWithCustomLibrary</groupId>
+  <artifactId>HybridFrameworkWithCustomLibrary</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>HybridFrameworkWithCustomLibrary</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+
+  <build>
+   
+    <plugins>
+      <plugin>  
+          <artifactId>maven-assembly-plugin</artifactId>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+               <goal>single</goal>
+              </goals>
+            </execution>
+          </executions>
+      </plugin>
+      
+      <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-compiler-plugin</artifactId>
+	      <configuration>
+	        <version>3.8.0</version>
+	        <type>maven-plugin</type>
+	      </configuration>    
+     </plugin>
+     
+      <plugin>
+             <groupId>org.apache.maven.surefire</groupId>
+             <artifactId>surefire</artifactId>
+             <version>2.22.0</version>
+			 <configuration>
+			   
+			     <suiteXmlFiles>
+			       <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+			     </suiteXmlFiles>
+			 </configuration>
+     
+     </plugin> 
+     
+      <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals> 
+              </execution>
+            </executions>
+      </plugin>
+    </plugins> 
+  </build> 
+  
+  
+  <dependencies>
+     
+		     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		    <version>3.141.59</version>
+		</dependency>
+		     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+		    <groupId>org.testng</groupId>
+		    <artifactId>testng</artifactId>
+		    <version>6.14.3</version>
+		    <scope>test</scope>
+		</dependency>
+				<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<dependency>
+		    <groupId>io.github.bonigarcia</groupId>
+		    <artifactId>webdrivermanager</artifactId>
+		    <version>3.1.1</version>
+		</dependency>
+				<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>3.17</version>
+		</dependency>
+				<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>3.17</version>
+		</dependency>
+				<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml-schemas</artifactId>
+		    <version>3.17</version>
+		</dependency>
+				<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-scratchpad</artifactId>
+		    <version>3.17</version>
+		</dependency>
+				<!-- https://mvnrepository.com/artifact/org.apache.poi/ooxml-schemas -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>ooxml-schemas</artifactId>
+		    <version>1.1</version>
+		</dependency>
+				<!-- https://mvnrepository.com/artifact/org.apache.poi/openxml4j -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>openxml4j</artifactId>
+		    <version>1.0-beta</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+       
+        <dependency>
+         <groupId>com.relevantcodes</groupId>
+         <artifactId>extentreports</artifactId>
+          <version>2.41.2</version>
+      </dependency> 
+      
+		      <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-email</artifactId>
+		    <version>1.5</version>
+		</dependency>
+      
+  </dependencies>
+</project>
